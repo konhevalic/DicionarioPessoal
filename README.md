@@ -1,2 +1,4 @@
-# DicionarioPessoal
-Dicionario pessoal de inglês criado para fins estudantis. Pelo fato de anotar palavras fora de ordem alfabética no caderno, criei este dicionário para adicionar as palavras que estou aprendendo em ordem alfabética.
+# Dicionario
+- Primeiro, execute o arquivo CreateTable.py, para que seja criado um banco de dados contendo 2 colunas: palavra e significado
+- Depois, execute o arquivo PersonalDictionary.py e comece a utilizar através de seu terminal.
+- 
