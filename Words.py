@@ -9,19 +9,21 @@ cursor = connection.cursor()
 
 # SQL:
 def search_word(word):
-    connection = sqlite3.connect('wordsTest.db')
-    cursor = connection.cursor()
-    cursor.execute("SELECT * FROM words")
+    if word != '':
+        connection = sqlite3.connect('wordsTest.db')
+        cursor = connection.cursor()
+        cursor.execute("SELECT * FROM words")
 
-    cursor_ordenated = sorted(cursor.fetchall())
-    for cursor_ordenated in cursor_ordenated:
-        if cursor_ordenated[0] == word:
-            print(cursor_ordenated[0] + ': ' + cursor_ordenated[1])
+        cursor_ordenated = sorted(cursor.fetchall())
+        for cursor_ordenated in cursor_ordenated:
+            if cursor_ordenated[0] == word:
+                print(cursor_ordenated[0] + ': ' + cursor_ordenated[1])
 
-    connection.commit()
-    connection.close()
+        connection.commit()
+        connection.close()
+    else:
+        return "Oops... Insira uma resposta válida"
 
-    Execute.continueProgram()
 
 def show_all():
     connection = sqlite3.connect('wordsTest.db')
@@ -35,7 +37,6 @@ def show_all():
     connection.commit()
     connection.close()
 
-    Execute.continueProgram()
 
 
 def add_word(word, meaning):
@@ -44,5 +45,3 @@ def add_word(word, meaning):
     cursor.execute("INSERT INTO words VALUES (?, ?)", (word, meaning))
     connection.commit()
     connection.close()
-
-    Execute.continueProgram()

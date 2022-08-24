@@ -1,5 +1,5 @@
 import Execute
 
-Execute.chooseOption()
+Execute.startProgram()
 
 
